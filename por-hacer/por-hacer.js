@@ -40,11 +40,19 @@ const crear = (descripcion) => {
     return porHacer;
 }
 
-let getListado = () => {
+let getListado = (completado) => {
 
     cargarDB()
+    if(completado == null){
+        return listadoPorHacer;
+    }else{
+        let listado2 = listadoPorHacer.filter((tarea)=> tarea.completado === completado)
+        
+        return listado2
+    }
+
     
-    return listadoPorHacer;
+    
 }
 
 const actualizar = (descripcion, completado) => {

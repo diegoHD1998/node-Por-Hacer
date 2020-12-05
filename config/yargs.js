@@ -1,3 +1,4 @@
+const { boolean } = require('yargs')
 
 
 const argv = require('yargs')
@@ -18,6 +19,12 @@ const argv = require('yargs')
                                     
                                 }
 
+                            })
+                            .command('listar','Listar tarea por hacer',{
+                                completado:{
+                                    alias: 'c',
+                                    type: 'boolean'
+                                }
                             })
                             .command('borrar','Borra una tarea por hacer',{
                                 descripcion:{
